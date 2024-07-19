@@ -70,7 +70,7 @@ If you have suggestions or improvements, feel free to create a pull request or o
 
 ## **License**
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT](https://github.com/muhammadadilnaeem/Question-Answer-ChatBot-gpt-4o-mini/blob/main/LICENSE) License.
 
 ---
 
