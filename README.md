@@ -6,6 +6,8 @@ Welcome to the **Conversational Q&A Chatbot** repository! This project uses **gp
 
 This chatbot is built using **Streamlit** and **LangChain** to provide a seamless user experience. It allows users to input their questions and get responses from the **gpt-4o-mini** model. The UI is designed to be user-friendly and responsive, with custom CSS for styling.
 
+https://github.com/user-attachments/assets/0fc0297f-2bf7-4399-a7a8-050bf521dcdf
+
 ## **Features**
 
 - **Interactive Q&A**: Ask questions related to Python or any programming language.
