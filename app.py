@@ -4,7 +4,7 @@
 import streamlit as st
 from langchain.schema import HumanMessage, SystemMessage, AIMessage # importing message types from langchain schem class to create messages in streamlit  
 from langchain.chains import LLMChain
-from langchain.chat_models import ChatOpenAI 
+from langchain_openai import ChatOpenAI 
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -15,7 +15,7 @@ openai_api_key = os.getenv("OPENAI_API_KEY")
 # Streamlit UI Code
 st.set_page_config(page_title="🧠 Simple Q & A Bot 🤖", page_icon=":robot:")
 st.markdown("<h1>Conversational Q&A Chatbot 🏁</h1>", unsafe_allow_html=True)
-st.write("Ask your queries about any topic related to Python or any programming language.")
+st.markdown("<p style='text-align: center;'>Ask your queries about any topic related to Python or any programming language.</p>", unsafe_allow_html=True)
 
 # Custom CSS for styling
 st.markdown(
@@ -114,12 +114,12 @@ if "flowmessages" not in st.session_state:
 # Define a function to get the response
 def get_openai_response(question):
     st.session_state["flowmessages"].append(HumanMessage(content=question))
-    answer = chat(st.session_state["flowmessages"])
+    answer = chat.invoke(st.session_state["flowmessages"])
     st.session_state["flowmessages"].append(AIMessage(content=answer.content))
     return answer.content
 
 # Input and button for user interaction
-input_text = st.text_input("", placeholder="Enter Your Question Here 🤔", key="input")
+input_text = st.text_input("Question", placeholder="Enter Your Question Here 🤔", label_visibility="collapsed", key="input")
 submit = st.button("Submit ✅")
 
 # Display the response
